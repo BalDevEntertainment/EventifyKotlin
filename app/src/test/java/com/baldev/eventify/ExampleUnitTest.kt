@@ -1,17 +1,12 @@
 package com.baldev.eventify
 
-import org.junit.Test
+import io.kotlintest.matchers.shouldBe
+import io.kotlintest.specs.StringSpec
 
-import org.junit.Assert.*
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+class MyTests : StringSpec() {
+    init {
+        "length should return size of string" {
+            "hello".length shouldBe 5
+        }
     }
 }
