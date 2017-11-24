@@ -5,10 +5,9 @@ import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 
 data class CreateUser(private val username: String, private val idGenerator: IdGenerator, private val users: InMemoryUsers) {
-    operator fun invoke(): Observable<User> = Observable.create({ buildUser(it) })
+    operator fun invoke(): Observable<User> = Observable.create({ createUser(it) })
 
-    private fun buildUser(emitter: ObservableEmitter<User>) {
-        var user = User(idGenerator.getId(), username)
-        emitter.onNext(users.put(user))
+    private fun createUser(emitter: ObservableEmitter<User>) {
+        emitter.onNext(users.put(User(idGenerator.getId(), username)))
     }
 }
