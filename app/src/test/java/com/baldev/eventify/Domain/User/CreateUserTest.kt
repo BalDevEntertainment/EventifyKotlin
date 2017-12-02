@@ -1,7 +1,6 @@
-package com.baldev.eventify.Domain
+package com.baldev.eventify.Domain.User
 
-import com.baldev.eventify.Domain.User.CreateUser
-import com.baldev.eventify.Domain.User.User
+import com.baldev.eventify.Domain.provideUsers
 import com.baldev.eventify.Infrastructure.TestIdGenerator
 import io.kotlintest.specs.BehaviorSpec
 

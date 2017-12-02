@@ -9,4 +9,6 @@ class InMemoryUsers(private val users: MutableList<User>) : Users {
         users.add(user)
         return user
     }
+
+    override fun find(id : String) = users.find { it.hasId(id) }
 }
